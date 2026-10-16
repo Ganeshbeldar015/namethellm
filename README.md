@@ -26,7 +26,8 @@ python -m namethellm.evaluate
 
 ### Model Performance
 - **Sprint 1 Baseline (TF-IDF)**: OOF Balanced Accuracy = **0.3004**
-- **Sprint 2 Hybrid (TF-IDF + Stylometry + Calibration)**: OOF Balanced Accuracy = **0.3304** (+0.0300 gain)
+- **Sprint 2 Hybrid (TF-IDF + Stylometry + Calibration)**: OOF Balanced Accuracy = **0.3304**
+- **Sprint 3 Stylegram (Multi-View Casing, Syntax, Char/Word & Stylometry)**: OOF Balanced Accuracy = **0.3430** (+0.0426 gain)
 
 ### Submission Generation
 ```bash
@@ -37,15 +38,14 @@ python -m namethellm.submission
 ### API Usage
 ```python
 from namethellm import data, split, metrics, submission
-from namethellm.models.hybrid import HybridStyloClassifier
-from namethellm.postprocess import BalancedAccuracyCalibrator
+from namethellm.models.stylegram import StylegramClassifier
 
 # Load dataset
 train_df = data.load_train_data()
 test_df = data.load_test_data()
 
-# Fit hybrid classifier (word TF-IDF + char TF-IDF + 46 stylometric features)
-clf = HybridStyloClassifier()
+# Fit multi-view stylegram classifier
+clf = StylegramClassifier()
 clf.fit(train_df["text"], train_df["model"])
 
 # Generate verified Kaggle submission

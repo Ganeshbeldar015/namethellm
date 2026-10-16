@@ -1,0 +1,20 @@
+{
+  "task_id": "TASK-006",
+  "from": "po-spec",
+  "to": "tech-lead",
+  "artifact": "harness/artifacts/TASK-006/01-spec.md",
+  "status": "complete",
+  "summary": "Specification complete for StylegramClassifier multi-view architecture targeting >0.3400 OOF Balanced Accuracy.",
+  "inputs_consumed": [
+    "docs/harness.md",
+    "harness/tasks/TASK-006.md"
+  ],
+  "acceptance_refs": ["AC-004-a", "AC-005-a"],
+  "open_questions": [],
+  "assumptions": ["ASM-001", "ASM-002", "ASM-003"],
+  "files_touched": [
+    "harness/artifacts/TASK-006/01-spec.md"
+  ],
+  "checks_run": [],
+  "next_expected_artifact": "03-plan.md"
+}

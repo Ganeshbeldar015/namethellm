@@ -7,6 +7,8 @@
 - [L-005] Defensive submission validation ordering -> Cause: Checking value equality or array comparisons before checking null/NaN triggers assertion errors or index mismatches -> Rule: Always validate null/NaN values across all columns before performing element-wise comparisons or set inclusion.
 - [L-006] Fast stylometric feature extraction -> Cause: Calling heavy regex or NLP parsers across thousands of rows can exceed inference time budgets -> Rule: Precompile lightweight regexes, use Python native string counters, and vectorize ratios with NumPy zero-safe denominators to achieve sub-second extraction.
 - [L-007] Stylometric feature synergy with linear classifiers vs trees -> Cause: High-dimensional word/character n-grams (30,000 features) preserve granular authorship tokens that tree ensembles compress or discard in SVD projection -> Rule: Combining sparse TF-IDF with standardized dense stylometric features in an L2-regularized linear model with balanced class weights yields superior performance over tree ensembles on text authorship attribution.
+- [L-008] Topic-invariant syntax and casing representations -> Cause: Models overfit to topical themes across prompts when relying strictly on standard lexical n-grams -> Rule: Encoding structural casing morphology ('shape_text') and stripping content words to preserve closed-class function word syntax ('function_text') significantly boosts cross-prompt generalization (+0.0426 balanced accuracy).
+
 
 
 

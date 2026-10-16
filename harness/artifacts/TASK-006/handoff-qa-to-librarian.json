@@ -1,0 +1,25 @@
+{
+  "task_id": "TASK-006",
+  "from": "qa",
+  "to": "librarian",
+  "artifact": "harness/artifacts/TASK-006/07-qa.md",
+  "status": "complete",
+  "summary": "QA evaluation complete. StylegramClassifier verified with 0.3430 OOF Balanced Accuracy (+0.0426 over baseline). All 43 unit tests passed.",
+  "inputs_consumed": [
+    "harness/artifacts/TASK-006/01-spec.md",
+    "harness/artifacts/TASK-006/05-build.md"
+  ],
+  "acceptance_refs": ["AC-004-a", "AC-005-a"],
+  "open_questions": [],
+  "assumptions": ["ASM-001", "ASM-002", "ASM-003"],
+  "files_touched": [
+    "harness/artifacts/TASK-006/07-qa.md"
+  ],
+  "checks_run": [
+    {
+      "cmd": "python -m pytest tests/unit",
+      "exit": 0
+    }
+  ],
+  "next_expected_artifact": "08-docs.md"
+}
