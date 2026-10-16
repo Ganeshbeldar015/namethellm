@@ -121,9 +121,9 @@ def validate_submission_file(
 
 
 def main() -> None:
-    """CLI entrypoint: trains baseline model and generates submission.parquet."""
+    """CLI entrypoint: trains frontier Stylegram model and generates submission.parquet."""
     from namethellm.data import load_test_data, load_train_data
-    from namethellm.models.baseline import BaselineTFIDFClassifier
+    from namethellm.models.stylegram import StylegramClassifier
 
     logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
     logger.info("Loading training and test data...")
@@ -131,9 +131,9 @@ def main() -> None:
     test_df = load_test_data()
 
     logger.info(
-        "Fitting baseline TF-IDF model on %d training samples...", len(train_df)
+        "Fitting frontier Stylegram multi-view model on %d training samples...", len(train_df)
     )
-    clf = BaselineTFIDFClassifier()
+    clf = StylegramClassifier()
     clf.fit(train_df["text"], train_df["model"])
 
     submission_file = Path("submission.parquet")
