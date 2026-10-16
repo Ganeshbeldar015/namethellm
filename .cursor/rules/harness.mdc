@@ -1,0 +1,6 @@
+---
+description: Operating guidelines for harness engineering
+globs: *
+---
+All instructions and operating guidelines are governed by AGENTS.md.
+Read AGENTS.md and docs/prompt.md before taking any action.

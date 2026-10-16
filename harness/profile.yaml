@@ -1,0 +1,20 @@
+project_type: ml
+languages:
+  - python
+frameworks:
+  - scikit-learn
+  - pandas
+  - numpy
+package_manager: pip
+has_ui: false
+has_db: false
+has_network_integrations: false
+handles_sensitive_data: false
+deploy_target: none
+team_mode: solo
+ci: none
+parallelism: 1
+sprint_length: by-task
+confidence: 0.95
+disabled_roles:
+  - designer

@@ -1,0 +1,26 @@
+{
+  "harness_version": "1.0.0",
+  "profile": "ml",
+  "derived_from": {
+    "raw_md_sha": "c7791980e8fb30782b3e5ad16eae8cbfa7efbf07f89a339a3a220e491f9867ae",
+    "harness_md_sha": "ad2f0aae3e34a19ffafddf6a33ecfaf01bc38465d02813ed258fb68a40317daf"
+  },
+  "mode": "SCAFFOLD",
+  "sprint": 0,
+  "task_id": null,
+  "current_stage": "scaffold",
+  "stages": {
+    "scaffold": "in_progress"
+  },
+  "lanes": [],
+  "attempts": {
+    "scaffold": 1
+  },
+  "last_commit": null,
+  "last_gate": null,
+  "breaker": {
+    "tripped": false,
+    "reason": null
+  },
+  "updated_at": "2026-10-16T23:12:00+05:30"
+}

@@ -1,0 +1,41 @@
+tools:
+  - name: file_read
+    kind: builtin
+    purpose: Read repository files and dataset
+    allowed_roles: [orchestrator, po-spec, tech-lead, test-author, builder, reviewer, security, qa, scribe, librarian]
+    approval: auto
+  - name: file_write
+    kind: builtin
+    purpose: Create and edit repository files within allow-list
+    allowed_roles: [orchestrator, po-spec, tech-lead, test-author, builder, reviewer, security, qa, scribe, librarian]
+    approval: auto
+    guard: scripts/guard_paths.py
+  - name: bash
+    kind: bash
+    purpose: Execute commands listed in harness.md section 8
+    allowed_roles: [orchestrator, builder, test-author, qa, security]
+    approval: auto
+    sandbox: harness/tools/sandbox.md
+  - name: git
+    kind: bash
+    purpose: Version control operations
+    allowed_roles: [orchestrator, builder]
+    approval: auto
+    forbid:
+      - "push --force"
+      - "reset --hard origin"
+  - name: web_fetch
+    kind: api
+    purpose: Fetch reference documentation
+    allowed_roles: [po-spec, tech-lead, librarian]
+    approval: auto
+  - name: package_install
+    kind: bash
+    purpose: Install Python package dependencies
+    allowed_roles: [orchestrator, builder]
+    approval: confirm
+  - name: deploy
+    kind: bash
+    purpose: External system deployment
+    allowed_roles: []
+    approval: forbidden
