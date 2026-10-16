@@ -1,0 +1,29 @@
+{
+  "task_id": "TASK-001",
+  "from": "builder",
+  "to": "reviewer",
+  "artifact": "harness/artifacts/TASK-001/05-build.md",
+  "status": "complete",
+  "summary": "Implemented data ingestion, schema validation, and StratifiedGroupKFold cross-validation splitter. All 12 unit tests passing.",
+  "inputs_consumed": [
+    "harness/artifacts/TASK-001/03-plan.md",
+    "harness/artifacts/TASK-001/04-tests.md"
+  ],
+  "acceptance_refs": ["AC-001-a", "AC-001-b", "AC-002-a"],
+  "open_questions": [],
+  "assumptions": ["ASM-001", "ASM-002", "ASM-003"],
+  "files_touched": [
+    "src/namethellm/__init__.py",
+    "src/namethellm/constants.py",
+    "src/namethellm/data.py",
+    "src/namethellm/split.py",
+    "harness/artifacts/TASK-001/05-build.md"
+  ],
+  "checks_run": [
+    {
+      "cmd": "python -m pytest tests/unit",
+      "exit": 0
+    }
+  ],
+  "next_expected_artifact": "06-review.md"
+}

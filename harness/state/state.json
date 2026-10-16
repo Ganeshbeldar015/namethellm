@@ -7,24 +7,34 @@
   },
   "mode": "EXECUTE",
   "sprint": 1,
-  "task_id": null,
-  "current_stage": "idle",
+  "task_id": "TASK-001",
+  "current_stage": "done",
   "stages": {
-    "scaffold": "done"
+    "spec": "done",
+    "plan": "done",
+    "tests": "done",
+    "build": "done",
+    "review": "done",
+    "qa": "done"
   },
   "lanes": [],
   "attempts": {
-    "scaffold": 1
+    "spec": 1,
+    "plan": 1,
+    "tests": 1,
+    "build": 1,
+    "review": 1,
+    "qa": 1
   },
-  "last_commit": "7446c18",
+  "last_commit": "5601319",
   "last_gate": {
-    "name": "G0",
+    "name": "G4",
     "status": "pass",
-    "at": "2026-10-16T23:31:12+05:30"
+    "at": "2026-10-17T00:23:50+05:30"
   },
   "breaker": {
     "tripped": false,
     "reason": null
   },
-  "updated_at": "2026-10-16T23:32:10+05:30"
+  "updated_at": "2026-10-17T00:26:00+05:30"
 }
