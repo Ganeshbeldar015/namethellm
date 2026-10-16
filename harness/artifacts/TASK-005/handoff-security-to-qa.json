@@ -1,0 +1,24 @@
+{
+  "task_id": "TASK-005",
+  "from": "security",
+  "to": "qa",
+  "artifact": "harness/artifacts/TASK-005/06b-security.md",
+  "status": "complete",
+  "summary": "Security audit completed. No secrets detected. Numerical stability verified for probability calibrator.",
+  "inputs_consumed": [
+    "harness/artifacts/TASK-005/05-build.md"
+  ],
+  "acceptance_refs": ["AC-005-a", "AC-006-a"],
+  "open_questions": [],
+  "assumptions": ["ASM-001", "ASM-002", "ASM-003"],
+  "files_touched": [
+    "harness/artifacts/TASK-005/06b-security.md"
+  ],
+  "checks_run": [
+    {
+      "cmd": "python scripts/check_harness.py",
+      "exit": 0
+    }
+  ],
+  "next_expected_artifact": "07-qa.md"
+}

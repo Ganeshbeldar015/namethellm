@@ -24,8 +24,9 @@ python scripts/check_harness.py && python -m pytest tests/harness
 python -m namethellm.evaluate
 ```
 
-Current Baseline Performance:
-- **OOF Balanced Accuracy**: **0.3004** (vs. random guess 0.0555).
+### Model Performance
+- **Sprint 1 Baseline (TF-IDF)**: OOF Balanced Accuracy = **0.3004**
+- **Sprint 2 Hybrid (TF-IDF + Stylometry + Calibration)**: OOF Balanced Accuracy = **0.3304** (+0.0300 gain)
 
 ### Submission Generation
 ```bash
@@ -36,20 +37,18 @@ python -m namethellm.submission
 ### API Usage
 ```python
 from namethellm import data, split, metrics, submission
-from namethellm.features.stylometry import StylometricFeatureExtractor
-from namethellm.models.baseline import BaselineTFIDFClassifier
+from namethellm.models.hybrid import HybridStyloClassifier
+from namethellm.postprocess import BalancedAccuracyCalibrator
 
 # Load dataset
 train_df = data.load_train_data()
 test_df = data.load_test_data()
 
-# Extract 46 topic-invariant stylometric features
-extractor = StylometricFeatureExtractor()
-X_stylometry = extractor.fit_transform(train_df["text"])
-
-# Fit baseline model and generate validated submission
-clf = BaselineTFIDFClassifier()
+# Fit hybrid classifier (word TF-IDF + char TF-IDF + 46 stylometric features)
+clf = HybridStyloClassifier()
 clf.fit(train_df["text"], train_df["model"])
+
+# Generate verified Kaggle submission
 sub_df = submission.generate_submission(clf, test_df, output_path="submission.parquet")
 ```
 

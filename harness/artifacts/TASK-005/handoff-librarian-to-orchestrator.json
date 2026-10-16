@@ -1,0 +1,19 @@
+{
+  "task_id": "TASK-005",
+  "from": "librarian",
+  "to": "orchestrator",
+  "artifact": "docs/memory/lessons.md",
+  "status": "complete",
+  "summary": "Recorded lesson L-007 on stylometric synergy with linear models. AGENTS.md verified current and <= 150 lines.",
+  "inputs_consumed": [
+    "harness/artifacts/TASK-005/07-qa.md"
+  ],
+  "acceptance_refs": ["AC-005-a", "AC-006-a"],
+  "open_questions": [],
+  "assumptions": ["ASM-001", "ASM-002", "ASM-003"],
+  "files_touched": [
+    "docs/memory/lessons.md"
+  ],
+  "checks_run": [],
+  "next_expected_artifact": "done"
+}
