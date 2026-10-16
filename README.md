@@ -36,13 +36,18 @@ python -m namethellm.submission
 ### API Usage
 ```python
 from namethellm import data, split, metrics, submission
+from namethellm.features.stylometry import StylometricFeatureExtractor
 from namethellm.models.baseline import BaselineTFIDFClassifier
 
 # Load dataset
 train_df = data.load_train_data()
 test_df = data.load_test_data()
 
-# Fit model and generate validated submission
+# Extract 46 topic-invariant stylometric features
+extractor = StylometricFeatureExtractor()
+X_stylometry = extractor.fit_transform(train_df["text"])
+
+# Fit baseline model and generate validated submission
 clf = BaselineTFIDFClassifier()
 clf.fit(train_df["text"], train_df["model"])
 sub_df = submission.generate_submission(clf, test_df, output_path="submission.parquet")

@@ -5,4 +5,6 @@
 - [L-003] Stratified group splitting with asymmetric class sizes -> Cause: claude-fable-5 has 149 rows while others have 150 -> Rule: Use StratifiedGroupKFold with fixed random seed to balance class distributions across folds without strict integer equality constraints.
 - [L-004] Baseline TF-IDF parameter tuning -> Cause: Setting min_df > 1 causes vectorizer pruning errors on small unit test corpora -> Rule: Use min_df=1 for vectorizers to handle arbitrary batch sizes safely while bounding memory via max_features.
 - [L-005] Defensive submission validation ordering -> Cause: Checking value equality or array comparisons before checking null/NaN triggers assertion errors or index mismatches -> Rule: Always validate null/NaN values across all columns before performing element-wise comparisons or set inclusion.
+- [L-006] Fast stylometric feature extraction -> Cause: Calling heavy regex or NLP parsers across thousands of rows can exceed inference time budgets -> Rule: Precompile lightweight regexes, use Python native string counters, and vectorize ratios with NumPy zero-safe denominators to achieve sub-second extraction.
+
 
