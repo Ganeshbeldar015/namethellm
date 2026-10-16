@@ -1,0 +1,19 @@
+{
+  "task_id": "TASK-002",
+  "from": "reviewer",
+  "to": "qa",
+  "artifact": "harness/artifacts/TASK-002/06-review.md",
+  "status": "complete",
+  "summary": "Review complete. Code conforms to all standards with 0 blockers. Ready for QA gate evaluation.",
+  "inputs_consumed": [
+    "harness/artifacts/TASK-002/05-build.md"
+  ],
+  "acceptance_refs": ["AC-003-a", "AC-005-a"],
+  "open_questions": [],
+  "assumptions": ["ASM-001", "ASM-002", "ASM-003"],
+  "files_touched": [
+    "harness/artifacts/TASK-002/06-review.md"
+  ],
+  "checks_run": [],
+  "next_expected_artifact": "07-qa.md"
+}

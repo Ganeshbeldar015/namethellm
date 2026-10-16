@@ -18,16 +18,25 @@ python -m pytest tests/unit
 python scripts/check_harness.py && python -m pytest tests/harness
 ```
 
-### Data Ingestion & Splitting API
+### Baseline Model Evaluation
+```bash
+# Run 5-fold GroupKFold baseline evaluation
+python -m namethellm.evaluate
+```
+
+Current Baseline Performance:
+- **OOF Balanced Accuracy**: **0.3004** (vs. random guess 0.0555).
+
+### API Usage
 ```python
-from namethellm import data, split
+from namethellm import data, split, metrics
+from namethellm.models.baseline import BaselineTFIDFClassifier
 
-# Load and validate dataset
+# Load dataset
 train_df = data.load_train_data()
-test_df = data.load_test_data()
 
-# 5-fold cross-validation strictly grouped on prompt_id
-splits = split.get_group_kfold_splits(train_df, n_splits=5, seed=42)
-for fold, (train_idx, val_idx) in enumerate(splits):
-    print(f"Fold {fold}: {len(train_idx)} train, {len(val_idx)} val")
+# Evaluate balanced accuracy
+y_true = train_df["model"].values
+# preds = ...
+# score = metrics.compute_balanced_accuracy(y_true, preds)
 ```

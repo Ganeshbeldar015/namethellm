@@ -1,0 +1,19 @@
+{
+  "task_id": "TASK-002",
+  "from": "tech-lead",
+  "to": "test-author",
+  "artifact": "harness/artifacts/TASK-002/03-plan.md",
+  "status": "complete",
+  "summary": "Implementation plan formulated for Balanced Accuracy metric, TF-IDF baseline classifier, and GroupKFold evaluation runner.",
+  "inputs_consumed": [
+    "harness/artifacts/TASK-002/01-spec.md"
+  ],
+  "acceptance_refs": ["AC-003-a", "AC-005-a"],
+  "open_questions": [],
+  "assumptions": ["ASM-001", "ASM-002", "ASM-003"],
+  "files_touched": [
+    "harness/artifacts/TASK-002/03-plan.md"
+  ],
+  "checks_run": [],
+  "next_expected_artifact": "04-tests.md"
+}
