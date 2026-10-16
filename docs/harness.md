@@ -252,10 +252,6 @@ Canonical commands authorized for execution:
 
 ## 15. Open Questions
 
-*(Empty — all initial requirements and constraints clarified from `docs/raw.md` and repository inspection. Ready for user review and approval).*
-
----
-
 ## 16. Definition of Done
 
 A task is marked **Done** if and only if:

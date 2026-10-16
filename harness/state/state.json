@@ -3,24 +3,28 @@
   "profile": "ml",
   "derived_from": {
     "raw_md_sha": "c7791980e8fb30782b3e5ad16eae8cbfa7efbf07f89a339a3a220e491f9867ae",
-    "harness_md_sha": "ad2f0aae3e34a19ffafddf6a33ecfaf01bc38465d02813ed258fb68a40317daf"
+    "harness_md_sha": "d749ee24f638770e4acfbd0c5397245b251b27a5fcfcd700acdb5fdbbdcdae3d"
   },
-  "mode": "SCAFFOLD",
-  "sprint": 0,
+  "mode": "EXECUTE",
+  "sprint": 1,
   "task_id": null,
-  "current_stage": "scaffold",
+  "current_stage": "idle",
   "stages": {
-    "scaffold": "in_progress"
+    "scaffold": "done"
   },
   "lanes": [],
   "attempts": {
     "scaffold": 1
   },
-  "last_commit": null,
-  "last_gate": null,
+  "last_commit": "7446c18",
+  "last_gate": {
+    "name": "G0",
+    "status": "pass",
+    "at": "2026-10-16T23:31:12+05:30"
+  },
   "breaker": {
     "tripped": false,
     "reason": null
   },
-  "updated_at": "2026-10-16T23:12:00+05:30"
+  "updated_at": "2026-10-16T23:32:10+05:30"
 }
