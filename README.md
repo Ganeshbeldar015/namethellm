@@ -27,16 +27,24 @@ python -m namethellm.evaluate
 Current Baseline Performance:
 - **OOF Balanced Accuracy**: **0.3004** (vs. random guess 0.0555).
 
+### Submission Generation
+```bash
+# Generate validated submission.parquet for test data
+python -m namethellm.submission
+```
+
 ### API Usage
 ```python
-from namethellm import data, split, metrics
+from namethellm import data, split, metrics, submission
 from namethellm.models.baseline import BaselineTFIDFClassifier
 
 # Load dataset
 train_df = data.load_train_data()
+test_df = data.load_test_data()
 
-# Evaluate balanced accuracy
-y_true = train_df["model"].values
-# preds = ...
-# score = metrics.compute_balanced_accuracy(y_true, preds)
+# Fit model and generate validated submission
+clf = BaselineTFIDFClassifier()
+clf.fit(train_df["text"], train_df["model"])
+sub_df = submission.generate_submission(clf, test_df, output_path="submission.parquet")
 ```
+

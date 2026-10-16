@@ -1,0 +1,19 @@
+{
+  "task_id": "TASK-003",
+  "from": "reviewer",
+  "to": "qa",
+  "artifact": "harness/artifacts/TASK-003/06-review.md",
+  "status": "complete",
+  "summary": "Code review completed. Zero findings. Approved for QA validation.",
+  "inputs_consumed": [
+    "harness/artifacts/TASK-003/05-build.md"
+  ],
+  "acceptance_refs": ["AC-007-a"],
+  "open_questions": [],
+  "assumptions": ["ASM-001", "ASM-002", "ASM-003"],
+  "files_touched": [
+    "harness/artifacts/TASK-003/06-review.md"
+  ],
+  "checks_run": [],
+  "next_expected_artifact": "07-qa.md"
+}
